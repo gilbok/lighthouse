@@ -10,6 +10,10 @@ const store = require('../store');
 
 const CHATBOT_SERVER = utils.common.checkEnvVar(constants.CHATBOT_SERVER);
 
+router.get('/healthcheck', (req, res) => {
+    res.status(200).send('ok')
+})
+
 router.post('/lighthouse', async function(req, res) {
     const req_data = req.body;
     const {
